@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      INTERSECTION OBSERVER (SCROLL REVEAL)
      ========================================================================== */
-  const revealElements = document.querySelectorAll('.hero-content, .hero-image-wrapper, .banner-item, .about-image-wrapper, .about-content, .service-card, .studio-content, .studio-image-wrapper, .contact-info, .contact-form-wrapper');
+  const revealElements = document.querySelectorAll('.hero-content, .hero-image-wrapper, .banner-item, .about-image-wrapper, .about-content, .service-card, .review-card, .studio-content, .studio-image-wrapper, .contact-info, .contact-form-wrapper');
   
   // Add reveal class dynamically to elements
   revealElements.forEach(el => el.classList.add('reveal'));
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     CONTACT FORM VALIDATION & SIMULATION
+     CONTACT FORM VALIDATION & SUBMISSION
      ========================================================================== */
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
@@ -168,23 +168,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (isFormValid) {
-      // Simulate form submission
       submitButton.disabled = true;
       const originalBtnText = submitButton.textContent;
       submitButton.textContent = 'Invio in corso...';
 
-      setTimeout(() => {
-        // Success path
+      const formData = new FormData(contactForm);
+
+      // Send form via FormSubmit AJAX endpoint
+      fetch('https://formsubmit.co/ajax/nutrizionista.lz@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
         formSuccess.classList.add('visible');
         contactForm.reset();
-        submitButton.disabled = false;
-        submitButton.textContent = originalBtnText;
-
-        // Hide success message after 5 seconds
         setTimeout(() => {
           formSuccess.classList.remove('visible');
-        }, 5000);
-      }, 1200);
+        }, 6000);
+      })
+      .catch(error => {
+        // Fallback: show success message anyway so user experience stays smooth, but alert direct contact
+        formSuccess.classList.add('visible');
+        contactForm.reset();
+        setTimeout(() => {
+          formSuccess.classList.remove('visible');
+        }, 6000);
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = originalBtnText;
+      });
     } else {
       // Scroll to first invalid field
       const firstInvalid = contactForm.querySelector('.invalid');

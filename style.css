@@ -838,6 +838,169 @@ ul {
 }
 
 /* ==========================================================================
+   RECENSIONI & FEEDBACK SECTION
+   ========================================================================== */
+.reviews-section {
+  background-color: var(--primary-soft);
+  position: relative;
+}
+
+.google-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--white);
+  padding: 10px 22px;
+  border-radius: 50px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+  border: 1px solid rgba(67, 127, 134, 0.1);
+}
+
+.google-icon {
+  flex-shrink: 0;
+}
+
+.rating-stars {
+  color: #ffb400;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.rating-score {
+  font-family: var(--font-title);
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.rating-count {
+  font-size: 0.85rem;
+  color: var(--neutral-muted);
+  font-weight: 500;
+  padding-left: 6px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.review-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(44, 62, 53, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(44, 62, 53, 0.08);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.reviewer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  color: var(--white);
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(67, 127, 134, 0.2);
+}
+
+.reviewer-info h4 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-meta .stars {
+  color: #ffb400;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.review-source {
+  font-size: 0.8rem;
+  color: var(--neutral-muted);
+}
+
+.review-text {
+  color: var(--neutral-dark);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.verified-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--secondary);
+  font-weight: 600;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 14px;
+}
+
+.reviews-cta-box {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.reviews-cta-box p {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.reviews-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ==========================================================================
    CONTATTI SECTION
    ========================================================================== */
 .contact-section {
@@ -1274,6 +1437,158 @@ ul {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ==========================================================================
+   LEGAL PAGES (PRIVACY & COOKIE POLICY)
+   ========================================================================== */
+.legal-main {
+  padding-top: calc(var(--header-height) + 20px);
+}
+
+.legal-hero {
+  background-color: var(--primary-soft);
+  padding: 60px 0 40px;
+  border-bottom: 1px solid rgba(44, 62, 53, 0.05);
+}
+
+.legal-title {
+  font-family: var(--font-title);
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.legal-subtitle {
+  font-size: 1.15rem;
+  color: var(--secondary);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.legal-update-date {
+  font-size: 0.85rem;
+  color: var(--neutral-muted);
+}
+
+.legal-container {
+  max-width: 900px;
+}
+
+.legal-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 50px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(44, 62, 53, 0.04);
+}
+
+.legal-section {
+  margin-bottom: 40px;
+}
+
+.legal-section:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section h2 {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 8px;
+}
+
+.legal-section h3 {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.legal-section p {
+  color: var(--neutral-dark);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.legal-section ul,
+.legal-section ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.legal-section li {
+  color: var(--neutral-dark);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.legal-contact-box {
+  background-color: var(--primary-soft);
+  border-left: 4px solid var(--primary);
+  padding: 20px 24px;
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+  margin: 16px 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.cookie-type-box {
+  background-color: var(--neutral-light);
+  border: 1px solid rgba(44, 62, 53, 0.08);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.browser-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.browser-link-card {
+  background-color: var(--primary-soft);
+  border: 1px solid rgba(67, 127, 134, 0.15);
+  border-radius: var(--border-radius-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-fast);
+}
+
+.browser-link-card:hover {
+  background-color: var(--secondary-light);
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.browser-link-card strong {
+  font-family: var(--font-title);
+  color: var(--primary);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.browser-link-card span {
+  font-size: 0.8rem;
+  color: var(--neutral-muted);
+}
+
+.legal-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(44, 62, 53, 0.08);
 }
 
 /* ==========================================================================
