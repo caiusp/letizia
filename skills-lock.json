@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "letizia": {
+      "source": "/home/jack/Documenti/letizia",
+      "sourceType": "local",
+      "computedHash": "42acd7183f3d74a865a745edc965904f074611e56a0069877b36a4c67b2521cd"
+    }
+  }
+}
