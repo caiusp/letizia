@@ -1592,6 +1592,152 @@ ul {
 }
 
 /* ==========================================================================
+   SPAZIO HARMONIA SECTION
+   ========================================================================== */
+.harmonia-section {
+  position: relative;
+  background-color: var(--neutral-light);
+  background-image: 
+    linear-gradient(135deg, rgba(253, 252, 249, 0.92) 0%, rgba(253, 242, 241, 0.90) 100%),
+    url('logo_extracted-1.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 550px auto;
+  background-attachment: relative;
+  overflow: hidden;
+}
+
+.harmonia-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background-color: var(--white);
+  color: var(--secondary);
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(67, 127, 134, 0.15);
+}
+
+.harmonia-badge-icon {
+  font-size: 1.1rem;
+}
+
+.harmonia-intro {
+  max-width: 840px;
+  margin: 0 auto 50px auto;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--neutral-muted);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 28px 36px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(236, 140, 130, 0.15);
+  box-shadow: var(--shadow-sm);
+}
+
+.harmonia-intro strong {
+  color: var(--primary);
+  font-family: var(--font-title);
+}
+
+.harmonia-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.harmonia-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(67, 127, 134, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.harmonia-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.harmonia-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.harmonia-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.harmonia-card:hover .harmonia-img {
+  transform: scale(1.05);
+}
+
+.harmonia-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background-color: rgba(67, 127, 134, 0.92);
+  color: var(--white);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.harmonia-card-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.harmonia-name {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.harmonia-role {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+.harmonia-bio {
+  font-size: 0.95rem;
+  color: var(--neutral-muted);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* ==========================================================================
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 
@@ -1694,6 +1840,16 @@ ul {
   .footer-container {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  
+  .harmonia-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .harmonia-section {
+    background-size: 380px auto;
   }
 }
 

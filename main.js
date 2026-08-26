@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      INTERSECTION OBSERVER (SCROLL REVEAL)
      ========================================================================== */
-  const revealElements = document.querySelectorAll('.hero-content, .hero-image-wrapper, .banner-item, .about-image-wrapper, .about-content, .service-card, .review-card, .studio-content, .studio-image-wrapper, .contact-info, .contact-form-wrapper');
+  const revealElements = document.querySelectorAll('.hero-content, .hero-image-wrapper, .banner-item, .about-image-wrapper, .about-content, .service-card, .harmonia-intro, .harmonia-card, .review-card, .studio-content, .studio-image-wrapper, .contact-info, .contact-form-wrapper');
   
   // Add reveal class dynamically to elements
   revealElements.forEach(el => el.classList.add('reveal'));
