@@ -215,23 +215,28 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      MOBILE-FIRST UX: READ MORE ACCORDION
      ========================================================================== */
-  const btnReadMore = document.getElementById('btn-about-more');
-  const aboutMoreContent = document.getElementById('about-more');
+  const readMoreBtns = document.querySelectorAll('.btn-read-more');
 
-  if (btnReadMore && aboutMoreContent) {
-    btnReadMore.addEventListener('click', () => {
-      const isExpanded = aboutMoreContent.classList.contains('expanded');
+  readMoreBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('aria-controls');
+      if (!targetId) return;
+      
+      const content = document.getElementById(targetId);
+      if (!content) return;
+      
+      const isExpanded = content.classList.contains('expanded');
       
       if (!isExpanded) {
-        aboutMoreContent.classList.add('expanded');
-        btnReadMore.classList.add('expanded');
-        btnReadMore.innerHTML = 'Leggi meno <span class="arrow-down">↑</span>';
+        content.classList.add('expanded');
+        btn.classList.add('expanded');
+        btn.innerHTML = 'Leggi meno <span class="arrow-down">↑</span>';
       } else {
-        aboutMoreContent.classList.remove('expanded');
-        btnReadMore.classList.remove('expanded');
-        btnReadMore.innerHTML = 'Leggi di più <span class="arrow-down">↓</span>';
+        content.classList.remove('expanded');
+        btn.classList.remove('expanded');
+        btn.innerHTML = 'Leggi di più <span class="arrow-down">↓</span>';
       }
     });
-  }
+  });
 
 });
