@@ -212,4 +212,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ==========================================================================
+     MOBILE-FIRST UX: READ MORE ACCORDION
+     ========================================================================== */
+  const btnReadMore = document.getElementById('btn-about-more');
+  const aboutMoreContent = document.getElementById('about-more');
+
+  if (btnReadMore && aboutMoreContent) {
+    btnReadMore.addEventListener('click', () => {
+      const isExpanded = aboutMoreContent.classList.contains('expanded');
+      
+      if (!isExpanded) {
+        aboutMoreContent.classList.add('expanded');
+        btnReadMore.classList.add('expanded');
+        btnReadMore.innerHTML = 'Leggi meno <span class="arrow-down">↑</span>';
+      } else {
+        aboutMoreContent.classList.remove('expanded');
+        btnReadMore.classList.remove('expanded');
+        btnReadMore.innerHTML = 'Leggi di più <span class="arrow-down">↓</span>';
+      }
+    });
+  }
+
 });

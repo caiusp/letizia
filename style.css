@@ -1889,3 +1889,93 @@ ul {
     background-color: var(--primary-soft);
   }
 }
+
+/* ==========================================================================
+   MOBILE-FIRST UX ENHANCEMENTS
+   ========================================================================== */
+
+/* Read More Accordion */
+.read-more-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  opacity: 0;
+}
+.read-more-content.expanded {
+  max-height: 1000px;
+  opacity: 1;
+}
+.btn-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 0;
+  margin-top: 8px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+.btn-read-more:hover {
+  color: var(--primary-hover);
+  border-bottom-color: var(--primary-hover);
+}
+.btn-read-more .arrow-down {
+  transition: transform 0.3s ease;
+}
+.btn-read-more.expanded .arrow-down {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 991px) {
+  /* Horizontal Scrolling for Grids (Mobile Swipe) */
+  .services-grid,
+  .harmonia-grid,
+  .reviews-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    padding-bottom: 24px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .services-grid::-webkit-scrollbar,
+  .harmonia-grid::-webkit-scrollbar,
+  .reviews-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .service-card,
+  .harmonia-card,
+  .review-card {
+    min-width: 280px;
+    max-width: 320px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    white-space: normal;
+  }
+  
+  /* Make typography more scannable on mobile */
+  body {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  
+  .section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
